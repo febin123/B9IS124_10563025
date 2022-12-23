@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GetdataService } from '../getdata.service';
 
 @Component({
   selector: 'app-tab1',
@@ -6,7 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  data:any;
+  constructor(
+    public getData:GetdataService
+  ) {}
 
-  constructor() {}
-
+ 
+  ngOnInit(){
+    this.getData.doGet().subscribe(res=>{
+      this.data=res.data.articles;
+      console.log(this.data)
+    })
+  }
 }
