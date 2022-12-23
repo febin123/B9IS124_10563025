@@ -1,0 +1,7 @@
+{
+  "name": "IrelandNewsApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
